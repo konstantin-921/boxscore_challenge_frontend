@@ -9,8 +9,15 @@ import TableBody from '@material-ui/core/TableBody'
 
 const styles = theme => ({
   tableCell: {
-    paddingRight: 5,
-    paddingLeft: 15
+    paddingRight: 0,
+    paddingLeft: 5,
+    textAlign: 'center',
+    border: '0.5px solid #e0e0e0',
+    borderLeft: 'none',
+    backgroundColor: '#f0f0f0',
+    '&:last-child': {
+      paddingRight: 0
+    },
   },
 });
 

@@ -9,8 +9,15 @@ import TableBody from '@material-ui/core/TableBody'
 
 const styles = theme => ({
   tableCell: {
-    paddingRight: 10,
-    paddingLeft: 10
+    paddingRight: 5,
+    paddingLeft: 5,
+    textAlign: 'center',
+    border: '0.5px solid #e0e0e0',
+    borderLeft: 'none',
+    backgroundColor: '#f0f0f0',
+    '&:last-child': {
+      paddingRight: 5
+    },
   },
 });
 
@@ -25,15 +32,15 @@ class NbaSideTable extends React.Component {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>P</TableCell>
+              <TableCell className={classes.tableCell}>P</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
               <TableRow>
-                <TableCell>{pointsAway}</TableCell>
+                <TableCell className={classes.tableCell}>{pointsAway}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>{pointsHome}</TableCell>
+                <TableCell className={classes.tableCell}>{pointsHome}</TableCell>
               </TableRow>
           </TableBody>
         </Table>

@@ -5,10 +5,20 @@ import Grid from '@material-ui/core/Grid'
 const styles = theme => ({
   container: {
     textAlign: 'center',
-    height: '80px', 
-    fontSize: '30px',
     fontWeight: 'bold',
-    color: '#ffffff'
+    height: '80px',
+    color: '#ffffff',
+    fontSize: '30px'
+  },
+  middleContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    height: '80px',
+    fontWeight: 'bold',
+    backgroundColor: '#e0e0e0'
   }
 });
 
@@ -22,23 +32,21 @@ class MlbFooter extends React.Component {
     const batsAway = data.away_batter_totals.at_bats
     const hitsHome = data.home_batter_totals.hits
     const batsHome = data.home_batter_totals.at_bats
-    // const status = data.event_information.
-    console.log('====================================');
-    console.log(this.props.data);
-    console.log('====================================');
+    const statusGeneral = data.event_information.status === 'completed' ? 'BTM' : 'BTL'
+    const statusPeriod = data.event_information.status === 'completed' ? '9TH' : 'another'
     return (
-      <div style={{ marginBottom: '100px', width: '100%', minWidth: '410px', }}>
+      <div style={{ marginBottom: '100px' }}>
         <Grid container spacing={0} direction="row" alignItems="center" justify="center">
             <Grid item xs={5}>
-              <div className={classes.container} style={{backgroundColor: 'blue'}}>
+              <div className={classes.container} style={{ backgroundColor: 'blue' }}>
                 <div style={{ paddingTop: 10 }}>{teamAway}</div>
                 <div style={{ fontSize: '15px' }}>{hitsAway}-{batsAway}</div>
               </div>
-              
             </Grid>
             <Grid item xs={2}>
-              <div className={classes.container} style={{ backgroundColor: 'white', borderBottom: '0.5px solid #e0e0e0' }}>
-
+              <div className={classes.middleContainer}>
+                <div>{statusGeneral}</div>
+                <div>{statusPeriod}</div>
               </div>
             </Grid>
             <Grid item xs={5}>

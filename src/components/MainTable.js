@@ -15,7 +15,9 @@ import NbaFooter from './NbaFooter'
 const styles = theme => ({
   tableCell: {
     paddingRight: 10,
-    paddingLeft: 10
+    paddingLeft: 10,
+    border: '0.5px solid #e0e0e0',
+    textAlign: 'center'
   }
 });
 
@@ -53,7 +55,7 @@ class MainTable extends React.Component {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell className={classes.tableCell}></TableCell>
+                    <TableCell className={classes.tableCell} style={{ backgroundColor: '#f0f0f0' }}></TableCell>
                     {periodsAway.map((item, index) => {
                       return <TableCell className={classes.tableCell} key={index}>{index + 1}</TableCell>
                     })}
@@ -61,13 +63,13 @@ class MainTable extends React.Component {
                 </TableHead>
                 <TableBody>
                   <TableRow>
-                    <TableCell className={classes.tableCell}>{awayTeam}</TableCell>
+                    <TableCell className={classes.tableCell} style={{ backgroundColor: '#f0f0f0' }}>{awayTeam}</TableCell>
                     {periodsAway.map((item, index) => {
                       return <TableCell className={classes.tableCell} key={index}>{item}</TableCell>
                     })}
                   </TableRow>
                   <TableRow>
-                    <TableCell className={classes.tableCell}>{homeTeam}</TableCell>
+                    <TableCell className={classes.tableCell} style={{ backgroundColor: '#f0f0f0' }}>{homeTeam}</TableCell>
                     {periodsHome.map((item, index) => {
                       return <TableCell className={classes.tableCell} key={index}>{item}</TableCell>
                     })}

@@ -43,7 +43,7 @@ class Main extends React.Component {
       <div>
         {!loading ? 
         <React.Fragment>
-          <div style={{minWidth: '380px', maxWidth: '1000px', margin: 'auto'}}>
+          <div style={{minWidth: '410px', maxWidth: '1000px', margin: 'auto'}}>
             <MainTable data={data.dataMLB} />
             <MainTable data={data.dataNBA} />
           </div>
