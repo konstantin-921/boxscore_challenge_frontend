@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Table from '@material-ui/core/Table'
@@ -40,14 +41,17 @@ class MainTable extends React.Component {
   }
   
   render() {
+    console.log('====================================');
+    console.log(this.props);
+    console.log('====================================');
     const { classes } = this.props
     const { league } = this.props.data
-    const renderLeague = this.getSideTable(league)
-    const footer = this.getFooter(league)
     const periodsAway = this.props.data.away_period_scores
     const periodsHome = this.props.data.home_period_scores
     const awayTeam = this.props.data.away_team.abbreviation
     const homeTeam = this.props.data.home_team.abbreviation
+    const renderLeague = this.getSideTable(league)
+    const footer = this.getFooter(league)
     return (
       <React.Fragment>
         <Grid container spacing={0} direction="row" alignItems="center" justify="center">
@@ -63,13 +67,13 @@ class MainTable extends React.Component {
                 </TableHead>
                 <TableBody>
                   <TableRow>
-                    <TableCell className={classes.tableCell} style={{ backgroundColor: '#f0f0f0' }}>{awayTeam}</TableCell>
+                    <TableCell className={classes.tableCell} style={{ backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>{awayTeam}</TableCell>
                     {periodsAway.map((item, index) => {
                       return <TableCell className={classes.tableCell} key={index}>{item}</TableCell>
                     })}
                   </TableRow>
                   <TableRow>
-                    <TableCell className={classes.tableCell} style={{ backgroundColor: '#f0f0f0' }}>{homeTeam}</TableCell>
+                    <TableCell className={classes.tableCell} style={{ backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>{homeTeam}</TableCell>
                     {periodsHome.map((item, index) => {
                       return <TableCell className={classes.tableCell} key={index}>{item}</TableCell>
                     })}
@@ -84,5 +88,18 @@ class MainTable extends React.Component {
     );
   }
 }
+
+MainTable.propTypes = {
+  data: PropTypes.shape({
+    away_period_scores: PropTypes.arrayOf(PropTypes.number).isRequired,
+    home_period_scores: PropTypes.arrayOf(PropTypes.number).isRequired,
+    away_team: PropTypes.shape({
+      abbreviation: PropTypes.string.isRequired,
+    }).isRequired,
+    home_team: PropTypes.shape({
+      abbreviation: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default withStyles(styles)(MainTable);

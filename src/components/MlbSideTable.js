@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Table from '@material-ui/core/Table'
@@ -58,5 +59,20 @@ class MlbSideTable extends React.Component {
     );
   }
 }
+
+MlbSideTable.propTypes = {
+  data: PropTypes.shape({
+    away_batter_totals: PropTypes.shape({
+      runs: PropTypes.number.isRequired,
+      hits: PropTypes.number.isRequired,
+    }).isRequired,
+    home_batter_totals: PropTypes.shape({
+      runs: PropTypes.number.isRequired,
+      hits: PropTypes.number.isRequired,
+    }).isRequired,
+    away_errors: PropTypes.number.isRequired,
+    home_errors: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default withStyles(styles)(MlbSideTable);

@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Table from '@material-ui/core/Table'
@@ -48,5 +49,16 @@ class NbaSideTable extends React.Component {
     );
   }
 }
+
+NbaSideTable.propTypes = {
+  data: PropTypes.shape({
+    away_totals: PropTypes.shape({
+      points: PropTypes.number.isRequired,
+    }).isRequired,
+    home_totals: PropTypes.shape({
+      points: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default withStyles(styles)(NbaSideTable);

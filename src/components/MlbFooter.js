@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
@@ -60,5 +61,27 @@ class MlbFooter extends React.Component {
     );
   }
 }
+
+MlbFooter.propTypes = {
+  data: PropTypes.shape({
+    away_batter_totals: PropTypes.shape({
+      hits: PropTypes.number.isRequired,
+      at_bats: PropTypes.number.isRequired,
+    }),
+    home_batter_totals: PropTypes.shape({
+      hits: PropTypes.number.isRequired,
+      at_bats: PropTypes.number.isRequired,
+    }),
+    away_team: PropTypes.shape({
+      last_name: PropTypes.string.isRequired,
+    }).isRequired,
+    home_team: PropTypes.shape({
+      last_name: PropTypes.string.isRequired,
+    }).isRequired,
+    event_information: PropTypes.shape({
+      status: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default withStyles(styles)(MlbFooter);
