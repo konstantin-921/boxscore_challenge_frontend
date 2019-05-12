@@ -1,12 +1,15 @@
 ## Description
 
 This repository contains the front side of the 'Boxscore challenge' application
+
 [The server side is here](https://github.com/konstantin-921/boxscore_challenge_server)
 
 ## Get start
 
 First of all, you need to pull and start the server side of the application (link in the description)
+
 Run `npm install`
+
 Run `npm start`
 
 ## Available Scripts

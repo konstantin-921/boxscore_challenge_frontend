@@ -15,8 +15,8 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    const p1 = axios.get('http://localhost:4040/api/games', { params: { league: 'MLB' }})
-    const p2 = axios.get('http://localhost:4040/api/games', { params: { league: 'NBA' }})
+    const p1 = axios.get('http://localhost:4444/api/games', { params: { league: 'MLB' }})
+    const p2 = axios.get('http://localhost:4444/api/games', { params: { league: 'NBA' }})
 
     Promise.all([p1, p2])
     .then( ([res1, res2]) => {
