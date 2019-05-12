@@ -41,9 +41,6 @@ class MainTable extends React.Component {
   }
   
   render() {
-    console.log('====================================');
-    console.log(this.props);
-    console.log('====================================');
     const { classes } = this.props
     const { league } = this.props.data
     const periodsAway = this.props.data.away_period_scores
