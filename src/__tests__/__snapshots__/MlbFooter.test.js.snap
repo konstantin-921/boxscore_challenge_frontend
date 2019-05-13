@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MlbFooter component renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "marginBottom": "100px",
+    }
+  }
+>
+  <div
+    className="MuiGrid-container-3 MuiGrid-align-items-xs-center-11 MuiGrid-justify-xs-center-20"
+  >
+    <div
+      className="MuiGrid-item-4 MuiGrid-grid-xs-5-36"
+    >
+      <div
+        className="MlbFooter-container-1"
+        style={
+          Object {
+            "backgroundColor": "blue",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "paddingTop": 10,
+            }
+          }
+        >
+          CUBS
+        </div>
+        <div
+          style={
+            Object {
+              "fontSize": "15px",
+            }
+          }
+        >
+          7
+          -
+          30
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-4 MuiGrid-grid-xs-2-33"
+    >
+      <div
+        className="MlbFooter-middleContainer-2"
+      >
+        <div>
+          BTM
+        </div>
+        <div>
+          9TH
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-4 MuiGrid-grid-xs-5-36"
+    >
+      <div
+        className="MlbFooter-container-1"
+        style={
+          Object {
+            "backgroundColor": "red",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "paddingTop": 10,
+            }
+          }
+        >
+          CARDINALS
+        </div>
+        <div
+          style={
+            Object {
+              "fontSize": "15px",
+            }
+          }
+        >
+          5
+          -
+          25
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
