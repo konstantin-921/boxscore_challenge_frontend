@@ -21,9 +21,7 @@ class Main extends React.Component {
 
   componentDidMount() {
     socket.on('my other event', function(data){
-      console.log('====================================');
       console.log(data);
-      console.log('====================================');
     });
     const p1 = axios.get('http://localhost:4444/api/games', { params: { league: 'MLB' }})
     const p2 = axios.get('http://localhost:4444/api/games', { params: { league: 'NBA' }})
