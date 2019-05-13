@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
+import axios from 'axios'
 import Grid from '@material-ui/core/Grid'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -23,6 +24,22 @@ const styles = theme => ({
 });
 
 class MainTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataMLB: {},
+      dataNBA: {},
+      error: null,
+      loading: true,
+    }
+  }
+
+  // componentDidMount() {
+  //   axios.get('http://localhost:4444/api/games', { params: { league: this.props.league }})
+  //     .then(response => {
+
+  //     })
+  // }
 
   getSideTable = (league) => {
     const LEAGUE = {

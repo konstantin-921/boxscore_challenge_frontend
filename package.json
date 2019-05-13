@@ -8,7 +8,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-scripts": "3.0.0",
+    "socket.io-client": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,7 +22,11 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/"
     ],
-    "coverageReporters": ["json", "html", "text"],
+    "coverageReporters": [
+      "json",
+      "html",
+      "text"
+    ],
     "resetMocks": true
   },
   "eslintConfig": {
