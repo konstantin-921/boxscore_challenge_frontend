@@ -33,7 +33,7 @@ class MlbSideTable extends React.Component {
     const errorAway = data.away_errors
     const errorHome = data.home_errors
     return (
-      <Grid item xs={3}> 
+      <Grid item xs={3}>
         <Table>
           <TableHead>
             <TableRow>
@@ -75,4 +75,4 @@ MlbSideTable.propTypes = {
   }).isRequired,
 };
 
-export default withStyles(styles)(MlbSideTable);
+export default withStyles(styles)(MlbSideTable)

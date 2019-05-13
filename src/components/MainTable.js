@@ -99,4 +99,4 @@ MainTable.propTypes = {
   }).isRequired,
 };
 
-export default withStyles(styles)(MainTable);
+export default withStyles(styles)(MainTable)

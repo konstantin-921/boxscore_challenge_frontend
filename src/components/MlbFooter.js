@@ -84,4 +84,4 @@ MlbFooter.propTypes = {
   }).isRequired,
 };
 
-export default withStyles(styles)(MlbFooter);
+export default withStyles(styles)(MlbFooter)

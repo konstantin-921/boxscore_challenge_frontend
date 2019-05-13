@@ -62,4 +62,4 @@ NbaFooter.propTypes = {
   }).isRequired,
 };
 
-export default withStyles(styles)(NbaFooter);
+export default withStyles(styles)(NbaFooter)

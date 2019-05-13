@@ -61,4 +61,4 @@ NbaSideTable.propTypes = {
   }).isRequired,
 };
 
-export default withStyles(styles)(NbaSideTable);
+export default withStyles(styles)(NbaSideTable)

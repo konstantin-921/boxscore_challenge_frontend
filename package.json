@@ -21,6 +21,7 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/"
     ],
+    "coverageReporters": ["json", "html", "text"],
     "resetMocks": true
   },
   "eslintConfig": {

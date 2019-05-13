@@ -11,12 +11,22 @@ describe('MainTable component', () => {
     home_team: { abbreviation: "LAA" }
   }
 
-  it('initialize Main with initial state', () => {
-    const mainTable = shallow(<MainTable data={props} />);
-    console.log('====================================');
-    console.log(mainTable.dive().instance().getSideTable('MLB'));
-    console.log('====================================');
-    expect(mainTable.dive().instance().getSideTable('MLB')).toBeTruthy();
+  it('renders without crashing', () => {
+    const wrapper = shallow(<MainTable data={props} />);
+    const instance = wrapper.instance();
+    expect(instance).not.toBe(null);
+  });
+
+  it('getSideTable was called', () => {
+    const wrapper = shallow(<MainTable data={props} />)
+    expect(wrapper.dive().instance().getSideTable('MLB')).toBeTruthy()
+    expect(wrapper.dive().instance().getSideTable('NBA')).toBeTruthy()
+  })
+
+  it('getFooter was called', () => {
+    const wrapper = shallow(<MainTable data={props} />)
+    expect(wrapper.dive().instance().getFooter('MLB')).toBeTruthy()
+    expect(wrapper.dive().instance().getFooter('NBA')).toBeTruthy()
   })
 
 })

@@ -14,15 +14,20 @@ describe('Main container', () => {
     loading: true,
   }
 
-  const mainInstance = shallow(<Main />);
+  const wrapper = shallow(<Main />)
 
   afterEach(() => {
     jest.clearAllMocks()
   })
 
+  it('renders without crashing', () => {
+    const instance = wrapper.instance()
+    expect(instance).not.toBe(null)
+  });
+
   it('initialize Main with initial state', () => {
-    mainInstance.setState(initialState)
-    expect(mainInstance.state()).toEqual(initialState)
+    wrapper.setState(initialState)
+    expect(wrapper.state()).toEqual(initialState)
   })
 
   it('should fetch a team list', async () => {
@@ -30,15 +35,15 @@ describe('Main container', () => {
     const data = getSpy()
     const mlbData = await data[0]
     const nbaData = await data[1]
-    mainInstance.setState({ dataMLB: mlbData, dataNBA: nbaData })
+    wrapper.setState({ dataMLB: mlbData, dataNBA: nbaData })
     expect(getSpy).toBeCalled()
-    expect(mainInstance.state().dataMLB).toEqual(expect.objectContaining({
+    expect(wrapper.state().dataMLB).toEqual(expect.objectContaining({
       away_period_scores: expect.any(Array),
       home_period_scores: expect.any(Array),
       away_team: expect.any(Object),
       home_team: expect.any(Object)
     }));
-    expect(mainInstance.state().dataNBA).toEqual(expect.objectContaining({
+    expect(wrapper.state().dataNBA).toEqual(expect.objectContaining({
       away_period_scores: expect.any(Array),
       home_period_scores: expect.any(Array),
       away_team: expect.any(Object),
