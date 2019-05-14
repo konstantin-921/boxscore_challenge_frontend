@@ -16,7 +16,6 @@ const styles = theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
     height: '80px',
     fontWeight: 'bold',
     backgroundColor: '#e0e0e0'

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
+import socketIOClient from 'socket.io-client'
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid'
 import Table from '@material-ui/core/Table'
@@ -35,6 +36,14 @@ class MainTable extends React.Component {
 
   componentDidMount() {
     const { league } = this.props
+    const socket = socketIOClient('http://localhost:4444/')
+    socket.on(league, function (response) {
+      const game = JSON.parse(response.data)
+      this.setState({
+        game
+      })
+    }.bind(this));
+    
     axios.get('http://localhost:4444/api/games', { params: { league }})
     .then(response => {
       this.setState({
@@ -68,6 +77,9 @@ class MainTable extends React.Component {
   }
   
   render() {
+    console.log('====================================');
+    console.log('render');
+    console.log('====================================');
     const { loading, game } = this.state
     if(loading) { return null }
     const { classes, league } = this.props
