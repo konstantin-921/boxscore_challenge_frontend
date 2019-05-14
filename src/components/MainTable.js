@@ -37,12 +37,12 @@ class MainTable extends React.Component {
   componentDidMount() {
     const { league } = this.props
     const socket = socketIOClient('http://localhost:4444/')
-    socket.on(league, function (response) {
+    socket.on(league, (response) => {
       const game = JSON.parse(response.data)
       this.setState({
         game
       })
-    }.bind(this));
+    });
     
     axios.get('http://localhost:4444/api/games', { params: { league }})
     .then(response => {
@@ -77,9 +77,6 @@ class MainTable extends React.Component {
   }
   
   render() {
-    console.log('====================================');
-    console.log('render');
-    console.log('====================================');
     const { loading, game } = this.state
     if(loading) { return null }
     const { classes, league } = this.props
