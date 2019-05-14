@@ -1,12 +1,12 @@
 ## Description
 
-This repository contains the front side of the 'Boxscore challenge' application
+This repository contains the front side of 'Boxscore challenge' application
 
 [The server side is here](https://github.com/konstantin-921/boxscore_challenge_server)
 
-## Get start
+## Get started
 
-First of all, you need to pull and start the server side of the application (link in the description)
+First of all, you need to pull and start the server side of application (link in the description)
 
 Run `npm install`
 
@@ -26,5 +26,5 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Runs tests without a viewing mode and displays coverage.
+This runs tests without a watching mode and displays coverage.
 
