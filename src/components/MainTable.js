@@ -15,6 +15,8 @@ import NbaSideTable from './NbaSideTable'
 import MlbFooter from './MlbFooter'
 import NbaFooter from './NbaFooter'
 
+import config from '../config'
+
 const styles = theme => ({
   tableCell: {
     paddingRight: 10,
@@ -36,7 +38,7 @@ class MainTable extends React.Component {
 
   componentDidMount() {
     const { league } = this.props
-    const socket = socketIOClient('http://localhost:4444/')
+    const socket = socketIOClient(config.BASE_URL)
     socket.on(league, (response) => {
       const game = JSON.parse(response.data)
       this.setState({
@@ -44,7 +46,7 @@ class MainTable extends React.Component {
       })
     });
     
-    axios.get('http://localhost:4444/api/games', { params: { league }})
+    axios.get(`${config.BASE_URL}api/games`, { params: { league }})
     .then(response => {
       this.setState({
         loading: false,
