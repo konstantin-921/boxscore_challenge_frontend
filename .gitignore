@@ -9,6 +9,9 @@
 /coverage
 /src/__tests__/__snapshots__/
 
+# build
+/build
+
 # misc
 .DS_Store
 .env.local
