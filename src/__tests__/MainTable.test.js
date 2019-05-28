@@ -74,7 +74,7 @@ describe('MainTable component', () => {
     let game = await data
     expect(getSpy).toBeCalled()
     const diveInstance = wrapper.dive()
-    mockApi.get().then(()=> {
+    return mockApi.get().then(()=> {
       expect(diveInstance.state().game).toEqual(expect.objectContaining({
         away_period_scores: expect.any(Array),
         home_period_scores: expect.any(Array),
